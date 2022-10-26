@@ -10,7 +10,7 @@ import os
 
 from generation.generation import gpt2, gpt3, pplm, dexperts, dexperts_gpt3
 from utils.constants import PERSPECTIVE_API_ATTRIBUTES_LOWER
-from utils.perspective_api import PerspectiveWorker, unpack_scores
+# from utils.perspective_api import PerspectiveWorker, unpack_scores
 from utils.utils import load_jsonl, batchify, ensure_dir
 
 ALLOWED_MODELS = ['gpt3', 'gpt2', 'dexperts', 'dexperts-gpt3', 'pplm']
