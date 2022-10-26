@@ -7,7 +7,7 @@ from functools import partial
 from pathlib import Path
 from typing import Iterable, List
 
-import openai
+# import openai
 import pandas as pd
 import torch
 import torch.multiprocessing as mp
