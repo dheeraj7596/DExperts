@@ -95,11 +95,11 @@ def main(output_dir: str, dataset_file: Optional[str], use_eos: bool, model: str
     output_file = output_dir / f'{"eos" if use_eos else "prompted"}_gens_{model_type}.jsonl'
 
     # Create perspective worker thread
-    perspective = PerspectiveWorker(
-        out_file=perspective_file,
-        total=len(prompts) * n,
-        rate_limit=perspective_rate_limit
-    )
+    # perspective = PerspectiveWorker(
+    #     out_file=perspective_file,
+    #     total=len(prompts) * n,
+    #     rate_limit=perspective_rate_limit
+    # )
 
     # Setup model for generation
     # TODO: move this logic into generation.py
@@ -170,10 +170,10 @@ def main(output_dir: str, dataset_file: Optional[str], use_eos: bool, model: str
     generations = []
     for i, gen in enumerate(generations_iter):
         generations.append(gen)
-        perspective(f'generation-{i}', gen)
+        # perspective(f'generation-{i}', gen)
 
     torch.cuda.empty_cache()
-    perspective.stop()
+    # perspective.stop()
     print('Finished generation and perspective scoring!')
 
     if os.path.exists(perspective_file):
